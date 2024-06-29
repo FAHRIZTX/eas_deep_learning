@@ -12,7 +12,8 @@ RUN apk update && apk add python3-dev \
                           libffi-dev \
                           make cmake \
                           g++ \
-                          zlib-dev
+                          zlib-dev \
+                          gfortran
 
 RUN pip install -r requirements.txt
 
