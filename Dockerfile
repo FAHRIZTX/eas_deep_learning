@@ -6,6 +6,6 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install numpy scikit-learn flask gunicorn
+RUN pip install -r requirements.txt
 
 CMD ["python", "app.py"]
