@@ -22,7 +22,7 @@ RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/edge/community" >> /etc/apk
 #                           gfortran \
 #                           openblas-dev
 
-# RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 RUN apk update && apk add py3-scikit-learn
 
