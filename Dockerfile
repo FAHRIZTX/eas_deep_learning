@@ -13,7 +13,9 @@ RUN apk update && apk add python3-dev \
                           make cmake \
                           g++ \
                           zlib-dev \
-                          gfortran
+                          gfortran \
+                          python3-pkgconfig \
+                          libopenblas-dev
 
 RUN pip install -r requirements.txt
 
