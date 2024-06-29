@@ -6,6 +6,8 @@ WORKDIR /app
 
 COPY . /app
 
+RUN apt install build-essentials
+
 RUN pip install -r requirements.txt
 
 CMD ["python", "app.py"]
