@@ -8,21 +8,7 @@ COPY . /app
 
 RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/edge/community" >> /etc/apk/repositories
 
-# RUN apk update && apk add --no-cache \
-#                 ca-certificates \
-#                 openblas
-
-# RUN apk update && apk add python3-dev \
-#                           gcc \
-#                           libc-dev \
-#                           libffi-dev \
-#                           make cmake \
-#                           g++ \
-#                           zlib-dev \
-#                           gfortran \
-#                           openblas-dev
-
-RUN pip install -r requirements.txt
+RUN pip install flask gunicorn
 
 RUN apk update && apk add py3-scikit-learn
 
