@@ -6,7 +6,10 @@ WORKDIR /app
 
 COPY . /app
 
-RUN apt install build-essentials
+RUN apk update && apk add python3-dev \
+                          gcc \
+                          libc-dev \
+                          libffi-dev
 
 RUN pip install -r requirements.txt
 
