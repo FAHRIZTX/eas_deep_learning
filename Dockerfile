@@ -1,4 +1,4 @@
-FROM python:3.10-alpine
+FROM python:3.10
 
 RUN pip install --upgrade pip
 
@@ -6,10 +6,6 @@ WORKDIR /app
 
 COPY . /app
 
-RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/edge/community" >> /etc/apk/repositories
-
-RUN apk update && apk add py3-scikit-learn
-
-RUN pip install -r requirements.txt
+RUN pip install numpy scikit-learn flask gunicorn
 
 CMD ["python", "app.py"]
