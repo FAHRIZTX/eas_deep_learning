@@ -42,7 +42,7 @@ def predict():
         prediction=prediction[0][0],
         prediction_text=prediction_text,
         name=name,
-        age=age,
+        age=int(int(age)/365),
         gender=to_jenis(gender),
         height=height,
         weight=weight,
