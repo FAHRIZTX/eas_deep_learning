@@ -1,17 +1,19 @@
-def switch(quest):
-    if quest == '1':
-      return 1, 'Sangat Tidak Setuju'
-    elif quest == '2':
-        return 2, 'Tidak Setuju'
-    elif quest == '3':
-        return 3, 'Agak Setuju'
-    elif quest == '4':
-        return 4, 'Netral'
-    elif quest == '5':
-        return 5, 'Agak Setuju' 
-    elif quest == '6':
-        return 6, 'Setuju'  
-    elif quest == '7':
-        return 7, 'Sangat Setuju'                 
+def to_jenis(q):
+    if q == '1':
+      return 'Laki - Laki'
     else:
-        return 0, 'Tidak Dipilih'
+        return 'Perempuan'
+
+def to_tingkat(q):
+    if q == '1':
+      return 'Normal'
+    elif q == '2':
+        return 'Di atas normal'
+    else:
+        return 'Jauh di atas normal'
+
+def to_yatidak(q):
+    if q == '1':
+      return 'Ya'
+    elif q == '0':
+        return 'Tidak'

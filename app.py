@@ -1,16 +1,14 @@
 from flask import Flask, request, render_template
-import pickle
-from utils import switch
-import random
+import tensorflow as tf
+from utils import to_tingkat, to_yatidak, to_jenis
 
 app = Flask(__name__)
 
-model_file = open('DTRModel.pkl', 'rb')
-model = pickle.load(model_file, encoding='bytes')
+model = tf.keras.models.load_model('HeartDataCNNModel.h5')
 
 @app.route('/')
 def index():
-    return render_template('index.html', output='')
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -18,77 +16,43 @@ def predict():
     Predict based on user inputs
     and render the result to the html page
     '''
-    nama,jeniskelamin,jeniskendaraan,jenistransmisi,tahunkendaraan,merekkendaraan,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10 = [x for x in request.form.values()]
+    name,age,gender,height,weight,ap_hi,ap_lo,cholesterol,gluc,smoke,alco,active = [x for x in request.form.values()]
 
     data = []
 
-    ret, Q1 = switch(Q1)
-    data.append(ret)
-
-    ret, Q2 = switch(Q2)
-    data.append(ret)
-
-    ret, Q3 = switch(Q3)
-    data.append(ret)
-
-    ret, Q4 = switch(Q4)
-    data.append(ret)
-
-    ret, Q5 = switch(Q5)
-    data.append(ret)
-
-    ret, Q6 = switch(Q6)
-    data.append(ret)
-
-    ret, Q7 = switch(Q7)
-    data.append(ret)
-
-    ret, Q8 = switch(Q8)
-    data.append(ret)
-
-    ret, Q9 = switch(Q9)
-    data.append(ret)
-
-    ret, Q10 = switch(Q10)
-    data.append(ret)
+    data.append(int(age))
+    data.append(int(gender))
+    data.append(int(height))
+    data.append(int(weight))
+    data.append(int(ap_hi))
+    data.append(int(ap_lo))
+    data.append(int(cholesterol))
+    data.append(int(gluc))
+    data.append(int(smoke))
+    data.append(int(alco))
+    data.append(int(active))
 
     prediction = model.predict([data])
 
-    if prediction == 1:
-      output='Sangat Tidak Puas'
-    elif prediction == 2:
-      output='Tidak Puas'
-    elif prediction == 3:
-      output='Agak Tidak Puas'
-    elif prediction == 4:
-      output='Netral'
-    elif prediction == 5:
-      output='Agak Puas'  
-    elif prediction == 6:
-      output='Puas' 
-    elif prediction == 7:
-      output='Sangat Puas'                  
-    else:
-        output='Tidak Terprediksi'
+    prediction_text = 'Anda memiliki risiko tinggi penyakit jantung' if prediction[0][0] > 0.5 \
+        else 'Anda memiliki risiko rendah penyakit jantung'
 
-    return render_template('index.html', 
-        output=output,
-        nama=nama,
-        jeniskelamin=jeniskelamin,
-        jeniskendaraan=jeniskendaraan,
-        jenistransmisi=jenistransmisi,
-        tahunkendaraan=tahunkendaraan,
-        merekkendaraan=merekkendaraan,
-        Q1=Q1,
-        Q2=Q2,
-        Q3=Q3,
-        Q4=Q4,
-        Q5=Q5,
-        Q6=Q6,
-        Q7=Q7,
-        Q8=Q8,
-        Q9=Q9,
-        Q10=Q10
+    return render_template(
+        'index.html',
+        prediction=prediction[0][0],
+        prediction_text=prediction_text,
+        name=name,
+        age=age,
+        gender=to_jenis(gender),
+        height=height,
+        weight=weight,
+        ap_hi=ap_hi,
+        ap_lo=ap_lo,
+        cholesterol=to_tingkat(cholesterol),
+        gluc=to_tingkat(gluc),
+        smoke=to_yatidak(smoke),
+        alco=to_yatidak(alco),
+        active=to_yatidak(active)
     )
 
 
