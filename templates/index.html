@@ -40,12 +40,13 @@
                 >
                     <h3>Silahkan masukkan data anda:</h3>
 
-                    <label for="nama" class="mt-4 mb-2">Nama:</label>
+                    <label for="usia" class="mt-4 mb-2">Usia (hari):</label>
                     <input
-                        name="nama"
-                        id="nama"
+                        type="number"
+                        name="usia"
+                        id="usia"
                         class="p-4 bg-gray-100 rounded-md"
-                        placeholder="Nama"
+                        placeholder="Usia"
                     />
 
                     <label for="jeniskelamin" class="mt-4 mb-2"
@@ -56,231 +57,118 @@
                         id="jeniskelamin"
                         class="p-4 bg-gray-100 rounded-md"
                     >
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
+                        <option value="1">Laki-laki</option>
+                        <option value="2">Perempuan</option>
                     </select>
 
-                    <label for="jeniskendaraan" class="mt-4 mb-2"
-                        >Pilih Jenis Kendaraan Anda:</label
-                    >
-                    <select
-                        name="jeniskendaraan"
-                        id="jeniskendaraan"
+                    <label for="height" class="mt-4 mb-2">Tinggi Badan (cm):</label>
+                    <input
+                        type="number"
+                        name="height"
+                        id="height"
                         class="p-4 bg-gray-100 rounded-md"
-                    >
-                        <option value="Mobil">Mobil</option>
-                        <option value="Motor">Motor</option>
-                    </select>
+                        placeholder="Tinggi Badan"
+                    />
 
-                    <label for="jenistransmisi" class="mt-4 mb-2"
-                        >Pilih Jenis Transmisi Kendaraan Anda:</label
-                    >
-                    <select
-                        name="jenistransmisi"
-                        id="jenistransmisi"
+                    <label for="weight" class="mt-4 mb-2">Berat Badan (kg):</label>
+                    <input
+                        type="number"
+                        name="weight"
+                        id="weight"
                         class="p-4 bg-gray-100 rounded-md"
-                    >
-                        <option value="Manual">Manual</option>
-                        <option value="Automatic">Automatic</option>
-                    </select>
+                        placeholder="Berat Badan"
+                    />
 
-                    <label for="tahunkendaraan" class="mt-4 mb-2"
-                        >Pilih Tahun Kendaraan Anda:</label
-                    >
-                    <select
-                        name="tahunkendaraan"
-                        id="tahunkendaraan"
+                    <label for="ap_hi" class="mt-4 mb-2">Tekanan Darah Sistolik (mmHg):</label>
+                    <input
+                        type="number"
+                        name="ap_hi"
+                        id="ap_hi"
                         class="p-4 bg-gray-100 rounded-md"
-                    >
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                    </select>
+                        placeholder="Tekanan Darah Sistolik"
+                    />
 
-                    <label for="merekkendaraan" class="mt-4 mb-2"
-                        >Pilih Merek Kendaraan Anda:</label
-                    >
-                    <select
-                        name="merekkendaraan"
-                        id="merekkendaraan"
+                    <label for="ap_lo" class="mt-4 mb-2">Tekanan Darah Diastolik (mmHg):</label>
+                    <input
+                        type="number"
+                        name="ap_lo"
+                        id="ap_lo"
                         class="p-4 bg-gray-100 rounded-md"
-                    >
-                        <option value="Honda">Honda</option>
-                        <option value="Yamaha">Yamaha</option>
-                        <option value="Suzuki">Suzuki</option>
-                    </select>
+                        placeholder="Tekanan Darah Diastolik"
+                    />
 
                     <label for="Q1" class="mt-4 mb-2"
-                        >Saya puas dengan kualitas perbaikan yang dilakukan pada
-                        kendaraan:</label
+                        >Bagaimana tingkat kolesterol Anda?</label
                     >
                     <select
                         name="Q1"
                         id="Q1"
                         class="p-4 bg-gray-100 rounded-md"
                     >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
+                        <option value="1">Normal</option>
+                        <option value="2">Di atas normal</option>
+                        <option value="3">Jauh di atas normal</option>
                     </select>
 
                     <label for="Q2" class="mt-4 mb-2"
-                        >Staf servis baik dalam memberikan penjelasan mengenai
-                        jenis perbaikan yang diperlukan:</label
+                        >Bagaimana tingkat glukosa darah Anda?</label
                     >
                     <select
                         name="Q2"
                         id="Q2"
                         class="p-4 bg-gray-100 rounded-md"
                     >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
+                        <option value="1">Normal</option>
+                        <option value="2">Di atas normal</option>
+                        <option value="3">Jauh di atas normal</option>
                     </select>
+
                     <label for="Q3" class="mt-4 mb-2"
-                        >Staf responsif servis dalam menanggapi pertanyaan atau
-                        permintaan:</label
+                        >Apakah Anda merokok?</label
                     >
                     <select
                         name="Q3"
                         id="Q3"
                         class="p-4 bg-gray-100 rounded-md"
                     >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
                     </select>
+
                     <label for="Q4" class="mt-4 mb-2"
-                        >Pihak servis menjaga komunikasi dengan saya selama
-                        proses perbaikan:</label
+                        >Apakah Anda mengonsumsi alkohol?</label
                     >
                     <select
                         name="Q4"
                         id="Q4"
                         class="p-4 bg-gray-100 rounded-md"
                     >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
                     </select>
+
                     <label for="Q5" class="mt-4 mb-2"
-                        >Staf servis baik dalam memberikan estimasi waktu
-                        penyelesaian perbaikan:</label
+                        >Apakah Anda rutin berolahraga?</label
                     >
                     <select
                         name="Q5"
                         id="Q5"
                         class="p-4 bg-gray-100 rounded-md"
                     >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
                     </select>
+
                     <label for="Q6" class="mt-4 mb-2"
-                        >Service memberikan kenyamanan fasilitas tempat servis
-                        kendaraan:</label
+                        >Apakah Anda memiliki riwayat penyakit kardiovaskular?</label
                     >
                     <select
                         name="Q6"
                         id="Q6"
                         class="p-4 bg-gray-100 rounded-md"
                     >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
-                    </select>
-                    <label for="Q7" class="mt-4 mb-2"
-                        >Jelas dan terperinci dalam menjelaskan biaya perbaikan
-                        yang diberikan sebelumnya:</label
-                    >
-                    <select
-                        name="Q7"
-                        id="Q7"
-                        class="p-4 bg-gray-100 rounded-md"
-                    >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
-                    </select>
-                    <label for="Q8" class="mt-4 mb-2"
-                        >Kendaraan diserahkan dalam keadaan bersih setelah
-                        perbaikan selesai:</label
-                    >
-                    <select
-                        name="Q8"
-                        id="Q8"
-                        class="p-4 bg-gray-100 rounded-md"
-                    >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
-                    </select>
-                    <label for="Q9" class="mt-4 mb-2"
-                        >Pihak servis memberikan saran perawatan yang diperlukan
-                        untuk kendaraan saya:</label
-                    >
-                    <select
-                        name="Q9"
-                        id="Q9"
-                        class="p-4 bg-gray-100 rounded-md"
-                    >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
-                    </select>
-                    <label for="Q10" class="mt-4 mb-2"
-                        >Staf servis memberikan informasi mengenai garansi
-                        perbaikan:</label
-                    >
-                    <select
-                        name="Q10"
-                        id="Q10"
-                        class="p-4 bg-gray-100 rounded-md"
-                    >
-                        <option value="1">Sangat Tidak Setuju</option>
-                        <option value="2">Tidak Setuju</option>
-                        <option value="3">Agak Tidak Setuju</option>
-                        <option value="4">Netral</option>
-                        <option value="5">Agak Setuju</option>
-                        <option value="6">Setuju</option>
-                        <option value="7">Sangat Setuju</option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
                     </select>
                     <button
                         type="submit"
@@ -313,60 +201,38 @@
             <h3
                 class="badge bg-primary align-self-start flex-column text-3xl font-bold mb-8"
             >
-                Estimasi tingkat kepuasan layanan service kendaraan adalah :
+                Prediksi Risiko Penyakit Jantung Kardiovaskular:
             </h3>
             <h2 class="text-5xl font-bold">{{ output }}</h2>
 
             <h3 class="mt-8">
                 Data responden:
-                <p>Nama: <b>{{ nama }}</b></p>
+                <p>Usia: <b>{{ usia }}</b></p>
                 <p>Jenis Kelamin: <b>{{ jeniskelamin }}</b></p>
-                <p>Jenis kendaraan: <b>{{ jeniskendaraan }}</b></p>
-                <p>Jenis Transmisi: <b>{{ jenistransmisi }}</b></p>
-                <p>Tahun Kendaraan: <b>{{ tahunkendaraan }}</b></p>
-                <p>Merek Kendaraan: <b>{{ merekkendaraan}}</b></p>
+                <p>Tinggi Badan (cm): <b>{{ height }}</b></p>
+                <p>Berat Badan (kg): <b>{{ weight }}</b></p>
+                <p>Tekanan Darah Sistolik (mmHg): <b>{{ ap_hi }}</b></p>
+                <p>Tekanan Darah Diastolik (mmHg): <b>{{ ap_lo }}</b></p>
             </h3>
             <h3 class="mt-8">
                 Dengan pengisian quisioner anda sebagai berikut :
                 <p>
-                    Saya puas dengan kualitas perbaikan yang dilakukan pada
-                    kendaraan: <b>{{ Q1 }}</b>
+                    Apakah Anda memiliki riwayat kolesterol tinggi: <b>{{ Q1 }}</b>
                 </p>
                 <p>
-                    Staf servis baik dalam memberikan penjelasan mengenai jenis
-                    perbaikan yang diperlukan: <b>{{ Q2 }}</b>
+                    Apakah Anda menderita diabetes: <b>{{ Q2 }}</b>
                 </p>
                 <p>
-                    Staf responsif servis dalam menanggapi pertanyaan atau
-                    permintaan: <b>{{ Q3 }}</b>
+                    Apakah Anda merokok: <b>{{ Q3 }}</b>
                 </p>
                 <p>
-                    Pihak servis menjaga komunikasi dengan saya selama proses
-                    perbaikan: <b>{{ Q4 }}</b>
+                    Apakah Anda mengonsumsi alkohol: <b>{{ Q4 }}</b>
                 </p>
                 <p>
-                    Staf servis baik dalam memberikan estimasi waktu
-                    penyelesaian perbaikan: <b>{{ Q5 }}</b>
+                    Apakah Anda rutin berolahraga: <b>{{ Q5 }}</b>
                 </p>
                 <p>
-                    Service memberikan kenyamanan fasilitas tempat servis
-                    kendaraan: <b>{{ Q6 }}</b>
-                </p>
-                <p>
-                    Jelas dan terperinci dalam menjelaskan biaya perbaikan yang
-                    diberikan sebelumnya: <b>{{ Q7 }}</b>
-                </p>
-                <p>
-                    Kendaraan diserahkan dalam keadaan bersih setelah perbaikan
-                    selesai: <b>{{ Q8 }}</b>
-                </p>
-                <p>
-                    Pihak servis memberikan saran perawatan yang diperlukan
-                    untuk kendaraan saya: <b>{{ Q9 }}</b>
-                </p>
-                <p>
-                    Staf servis memberikan informasi mengenai garansi perbaikan:
-                    <b>{{ Q10 }}</b>
+                    Apakah Anda memiliki riwayat penyakit kardiovaskular: <b>{{ Q6 }}</b>
                 </p>
             </h3>
         </div>
