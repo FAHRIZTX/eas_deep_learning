@@ -1,70 +1,65 @@
-# Deployment Model Regresi Linier
+# Predict Risk Factors for Cardiovascular Heart Disease
+
+Oleh:
+Kelompok - 8
+1. Muhammad Ikraam Fahriono (1462100013)
+2. Rika Yulianto (1462100048)
+3. Nifil Afrisma (1462100050)
+4. Mochamad Fikri Dwi Fardian (1462100220)
+
+Dosen Pengampu:
+Bapak Andrey Kartika Widhy Hapantenda, S.Kom., M.Kom.
 
 ## Deskripsi singkat
 
-Repository ini berisi semua file yang dibutuhkan untuk melakukan deployment model Machine Learning Regresi Linier. Adapun model yang digunakan merupakan model untuk memprediksi biaya asuransi berdasarkan:
+Repository ini berisi semua file yang dibutuhkan untuk melakukan deployment model Convolutional Neural Network.
+Adapun variabel yang digunakan untuk membuat model guna memprediksi Risiko Penyakit Jantung Kardiovaskular:
 
--   `Age` atau usia dengan tipe data integer (bilangan bulat)
--   `Sex` atau jenis kelamin yakni `Male` atau `Female`
--   `Smoker` atau status perokok yakni `Yes` atau `No`
+| Variabel    | Deskripsi                                                                 |
+|-------------|---------------------------------------------------------------------------|
+| age         | Usia partisipan dalam hari                                                |
+| gender      | Jenis kelamin partisipan (1: Pria, 2: Wanita)                             |
+| height      | Tinggi badan partisipan dalam sentimeter                                  |
+| weight      | Berat badan partisipan dalam kilogram                                     |
+| ap_hi       | Tekanan darah sistolik (mmHg)                                             |
+| ap_lo       | Tekanan darah diastolik (mmHg)                                            |
+| cholestrol  | Tingkat kolesterol (1: normal, 2: di atas normal, 3: jauh di atas normal) |
+| gluc        | Tingkat glukosa (1: normal, 2: di atas normal, 3: jauh di atas normal)    |
+| smoke       | Status merokok (0: Tidak, 1: Ya)                                          |
+| alco        | Konsumsi alkohol (0: Tidak, 1: Ya)                                        |
+| active      | Aktivitas fisik (0: Tidak, 1: Ya)                                         |
+| cardio      | Diagnosis penyakit kardiovaskular (0: Tidak ada, 1: Ada)                  |
 
-#
 
-## Sekilas mengenai input model
+---
+## Requirements
 
-Agar dapat memprediksi biaya asuransi, data input model harus mengikuti format sebagai berikut:\
-`[Age, Sex(Female), Sex(Male), Smoker(No), Smoker(Yes)]`
+- Python Version `>= 3.9`
 
-Sebagai contoh:\
-Age: 20\
-Sex: Male\
-Smoker: No
+## Installation
 
-Akan diubah menjadi:\
-`[20, 0, 1, 1, 0]`
+```bash
+$ git clone https://github.com/FAHRIZTX/eas_deep_learning.git
+$ cd eas_deep_learning
+$ python -m pip install -r requirements.txt
+$ python app.py
+```
 
-#
+### Akses melalui Website
+
+1. Anda akan diberikan URL untuk membuka website berupa [http://localhost:5000](http://localhost:5000) atau [http://127.0.0.1:5000](http://127.0.0.1:5000)
+2. Buka URL dengan browser, coba masukkan data yang ingin di prediksi.
+3. Anda akan diberikan data hasil prediksi.
+
+
+---
 
 ## Folder, file, dan kegunaannya
 
 -   templates/
     -   index.html --> Berisi template website
 -   app.py --> Berisi konfigurasi route untuk API
--   model.pkl --> Model Regresi Linier yang sudah di-training
--   request.py --> Berisi percobaan pemanggilan API dengan payload data JSON
+-   HeartDataCNNModel.h5 --> Model CNN yang sudah di-training
 -   requirements.txt --> Berisi daftar dependency/package Python yang diperlukan untuk menjalankan API dan model Regresi Linier
-
-#
-
-## Cara menjalankan API pada komputer Anda
-
-### Menjalankan API
-
-1. Pastikan Anda sudah menginstall Anaconda
-1. Buka terminal/command prompt/power shell
-1. Buat virtual environment dengan\
-   `conda create -n <nama-environment> python=3.9`
-1. Aktifkan virtual environment dengan\
-   `conda activate <nama-environment>`
-1. Install semua dependency/package Python dengan\
-   `pip install -r requirements.txt`
-1. Jalankan API menggunakan perintah\
-   `python app.py`
-
-### Akses melalui Website
-
-Setelah API berjalan:
-
-1. Anda akan diberikan URL untuk membuka website berupa `localhost:5000/` atau `127.0.0.1:5000/`
-1. Buka URL dengan browser, coba masukkan data yang ingin di prediksi
-1. Anda akan diberikan estimasi biaya asuransi pada sisi kanan halaman website
-
-### Mencoba Akses API menggunakan payload JSON
-
-Setelah API berjalan:
-
-1. Buka terminal/comand prompt/power shell
-1. Jalankan perintah `python request.py`
-1. Setelah berhasil dieksekusi, Anda akan diberikan data response berupa JSON juga seperti contoh berikut:\
-   `{'Age': 20, 'Insurance Cost': 3146.79, 'Sex': 'Male', 'Smoker': 'No'}`
-1. Hasil prediksi biaya asuransi terdapat pada value dari key `'Insurance Cost'` yang dapat Anda manfaatkan untuk aplikasi lain.
+-   Dockerfile --> File untuk menjalankan via Docker
+  
