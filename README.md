@@ -10,6 +10,14 @@ Kelompok - 8
 Dosen Pengampu:
 Bapak Andrey Kartika Widhy Hapantenda, S.Kom., M.Kom.
 
+---
+## Demo
+
+Demo URL: [https://eas_dl.fahriztx.dev/](https://eas_dl.fahriztx.dev/)
+
+Build with [Docker](https://github.com/FAHRIZTX/eas_deep_learning/blob/master/Dockerfile) on `LocalServer` using [Cloudflare Tunnels](https://www.cloudflare.com/products/tunnel/)
+
+---
 ## Deskripsi singkat
 
 Repository ini berisi semua file yang dibutuhkan untuk melakukan deployment model Convolutional Neural Network.
