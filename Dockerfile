@@ -16,4 +16,4 @@ RUN python -m pip install numpy==1.24.2
 RUN python -m pip install scikit-learn==1.2.1
 RUN pip install tensorflow==2.15.0
 
-CMD ["python", "app.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "wsgi:create_app()"]
