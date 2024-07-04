@@ -46,11 +46,23 @@ Adapun variabel yang digunakan untuk membuat model guna memprediksi Risiko Penya
 
 ## Installation
 
+#### Using Python
+
 ```bash
 $ git clone https://github.com/FAHRIZTX/eas_deep_learning.git
 $ cd eas_deep_learning
 $ python -m pip install -r requirements.txt
 $ python app.py
+```
+
+
+#### Using Docker
+
+```bash
+$ git clone https://github.com/FAHRIZTX/eas_deep_learning.git
+$ cd eas_deep_learning
+$ docker build -t <image_name_tag> .
+$ docker run -itd --name eas_dl -p 5000:80 eas_dl
 ```
 
 ### Akses melalui Website
